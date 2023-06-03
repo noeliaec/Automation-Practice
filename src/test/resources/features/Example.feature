@@ -1,14 +1,16 @@
-Feature: Login in underc0de forum
+Feature: Sign In
+  @Noe
+  Scenario Outline: User Sign In
+    Given I have a web browser installed and internet connection
+    When I open the page
+    And I click on the "Signin" button of the main page
+    And I enter the "<username>" and "<password>"
+    And I click on the "Signin" button to login
+    Then the screen should display the validation message "<validation_message>"
 
-  @ExampleTag
-  Scenario Outline: User login in the Underc0de forum
-    Given the user is on the home screen of Underc0de.org
-    When the user click the "FORO" button
-    And the user click the "INGRESAR" button of the forum
-    And the user complete te user information. Usuario: "<user>" Contraseña: "<pass>"
-    And the user click the "INGRESAR" button of the forum modal
-    Then the user verifies that they are logged in.
     Examples:
-      | user         | pass          |
-      | autoc0de     | Underc0de     |
-      | autoc0deFail | undercodefail |
+      | username | password | validation_message               |
+      | username | password | Success                          |
+      |          | password | Login and/or password are wrong. |
+      | username |          | Login and/or password are wrong. |
+      |          |          | Login and/or password are wrong. |

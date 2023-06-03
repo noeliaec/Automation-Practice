@@ -10,34 +10,32 @@ public class ExampleSteps {
 
     ExamplePage examplePage = new ExamplePage();
 
-    @Given("the user is on the home screen of Underc0de.org")
-    public void theUserIsOnTheHomeScreenOfUndercDeOrg() {
+    @Given("I have a web browser installed and internet connection")
+    public void iHaveAWebBrowserInstalledAndInternetConnection() {
+    }
+
+    @When("I open the page")
+    public void iOpenThePage() {
         examplePage.navigateToMainURL();
-        examplePage.verifyHomeTitle();
     }
 
-    @And("^the user click the \"(.*)\" button$")
-    public void theUserClickTheButton(String button) {
-        examplePage.clickButtonSwitch(button);
-    }
-    @And("^the user click the \"INGRESAR\" button of the forum$")
-    public void theUserClickTheINGRESARButtonOfTheForum() {
-        examplePage.clickIngresarButtonForum();
+    @And("^I click on the \"(.*)\" button of the main page$")
+    public void iClickOnTheButton(String btn) {
+        examplePage.clickBtnSigninMain();
     }
 
-    @And("^the user click the \"INGRESAR\" button of the forum modal$")
-    public void theUserClickTheINGRESARButtonOfTheForumModal() {
-        examplePage.clickIngresarButtonForumModal();
+    @And("^I click on the \"(.*)\" button to login$")
+    public void iClickOnTheButtonToLogin(String btn) {
+        examplePage.clickBtnSigninLogin();
     }
 
-    @And("^the user complete te user information. Usuario: \"(.*)\" Contraseña: \"(.*)\"$")
-    public void theUserCompleteTeUserInformationUsuarioUserContraseñaPass(String user, String pass) {
-        examplePage.completeLoginData(user, pass);
+    @And("^I enter the \"(.*)\" and \"(.*)\"$")
+    public void iEnterTheUsernameAndPassword(String user, String pass) {
+        examplePage.ingresarDatos(user, pass);
     }
 
-    @Then("the user verifies that they are logged in.")
-    public void theUserVerifiesThatTheyAreLoggedIn() {
-        examplePage.verifyLogin();
+    @Then("^the screen should display the validation message \"(.*)\"$")
+    public void theScreenShouldDisplayTheValidationMessageValidation_message(String msj) {
+        examplePage.verificarLogin(msj);
     }
-
 }

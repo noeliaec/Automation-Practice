@@ -124,7 +124,7 @@
                         <!--suppress UnresolvedMavenProperty -->
                         <executionMode>${mode}</executionMode>
                         <browser>Chromium</browser>
-                        <applicationUrl>https://underc0de.org/</applicationUrl>
+                        <applicationUrl>http://zero.webappsecurity.com/</applicationUrl>
                         <remoteUrl/>
                     </systemPropertyVariables>
                     <testFailureIgnore>true</testFailureIgnore>
