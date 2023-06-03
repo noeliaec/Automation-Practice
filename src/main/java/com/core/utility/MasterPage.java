@@ -1,5 +1,6 @@
 package com.core.utility;
 
+import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.options.MouseButton;
 import com.microsoft.playwright.options.WaitForSelectorState;
@@ -9,6 +10,7 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.StringSelection;
+import java.util.List;
 
 public abstract class MasterPage extends Hooks {
     public void auto_openURLInBrowser(){
@@ -141,6 +143,10 @@ public abstract class MasterPage extends Hooks {
 
     public void auto_switchToIframe(String iFrame){
         page.frameLocator(iFrame);
+    }
+
+    public List<ElementHandle> auto_getElements(String locator) {
+        return page.querySelectorAll(locator);
     }
 
 }
