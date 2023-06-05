@@ -18,7 +18,7 @@ public class TransferenciasSteps {
 
     @And("^I click on \"(.*)\"$")
     public void iClickOn(String arg0) {
-        transferenciasPage.clickBtnFromAccount();
+        transferenciasPage.clickBtnSubmit1();
     }
 
     @And("^I select the option \"(.*)\" from the first dropdown menu$")
@@ -43,5 +43,10 @@ public class TransferenciasSteps {
     @And("^I click on the \"(.*)\" button to login in the web$")
     public void iClickOnTheButtonToLoginInTheWeb(String btn) {
         transferenciasPage.clickBtnSubmitAndBack();
+    }
+
+    @Then("^after transaction the screen should display the validation message \"(.*)\"$")
+    public void afterTransactionTheScreenShouldDisplayTheValidationMessage(String msj) {
+        transferenciasPage.verificarTransaccion(msj);
     }
 }
